@@ -1,11 +1,7 @@
 %define	name	opengk
 %define	version	1.4.2
-%define	snap	20050322
-%define	release	0.%{snap}.6mdk
-
-%{expand:%%define o_ver %(echo v%{version}| sed "s#\.#_#g")}
-%define openh323_version 1.15.3
-%define pwlib_version 1.8.4
+%define	cvs	20070503
+%define	release	%mkrel 0.%{cvs}.1
 
 Summary:	H.323 basic gatekeeper
 Name:		%{name}
@@ -13,12 +9,11 @@ Version:	%{version}
 Release:	%{release}
 License:	MPL
 Group:		Communications
-Source0:	%{name}-%{o_ver}-%{snap}-src.tar.bz2
-Patch0:		%{name}-mak_files.patch.bz2
+Source0:	%{name}-%{cvs}.tar.bz2
+Patch0:		%{name}-mak_files.patch
 URL:		http://openh323.sourceforge.net/
-BuildRequires:	openh323-devel >= %{openh323_version} pwlib-devel >= %{pwlib_version}
+BuildRequires:	openh323-devel pwlib-devel
 Conflicts:	vpb-devel
-Requires:	openh323_1 >= %{openh323_version}
 Epoch:		1
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -46,8 +41,8 @@ Advanced features
 %setup -q -n %{name}
 %patch0 -p1
 
-%build
 
+%build
 export CFLAGS="%{optflags} -DLDAP_DEPRECATED"
 export CXXFLAGS="%{optflags} -DLDAP_DEPRECATED"
 
