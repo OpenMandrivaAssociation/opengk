@@ -1,7 +1,7 @@
 %define	name	opengk
 %define	version	1.4.2
 %define	cvs	20070503
-%define	release	%mkrel 0.%{cvs}.1
+%define	release	%mkrel 0.%{cvs}.2
 
 Summary:	H.323 basic gatekeeper
 Name:		%{name}
