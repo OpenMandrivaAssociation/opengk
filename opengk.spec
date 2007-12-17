@@ -15,7 +15,6 @@ URL:		http://openh323.sourceforge.net/
 BuildRequires:	openh323-devel pwlib-devel
 Conflicts:	vpb-devel
 Epoch:		1
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This is a very basic H.323 Gatekeeper.
