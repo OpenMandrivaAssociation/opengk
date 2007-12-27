@@ -1,18 +1,16 @@
-%define	name	opengk
-%define	version	1.4.2
 %define	cvs	20070503
-%define	release	%mkrel 0.%{cvs}.2
 
 Summary:	H.323 basic gatekeeper
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		opengk
+Version:	1.4.2
+Release:	%mkrel 0.%{cvs}.3
 License:	MPL
 Group:		Communications
 Source0:	%{name}-%{cvs}.tar.bz2
 Patch0:		%{name}-mak_files.patch
 URL:		http://openh323.sourceforge.net/
-BuildRequires:	openh323-devel pwlib-devel
+BuildRequires:	openh323-devel
+BuildRequires:	ptlib-devel
 Conflicts:	vpb-devel
 Epoch:		1
 
@@ -39,6 +37,8 @@ Advanced features
 
 %setup -q -n %{name}
 %patch0 -p1
+perl -pi -e 's,BOOL,bool,g' main.h
+perl -pi -e 's,BOOL,bool,g' main.cxx
 
 
 %build
@@ -46,13 +46,15 @@ export CFLAGS="%{optflags} -DLDAP_DEPRECATED"
 export CXXFLAGS="%{optflags} -DLDAP_DEPRECATED"
 
 %make \
+    USE_OPAL=1 \
     OPTCCFLAGS="%{optflags}" \
     PWLIBDIR=%{_datadir}/pwlib \
-    OPENH323DIR=%{_prefix} \
+    OPALDIR=%{_datadir}/opal \
     PREFIX=%{_prefix} \
+    OPAL_LIBDIR=%{_libdir} \
+    OPAL_INCDIR=%{_includedir}/opal \
     PWLIB_BUILD=1 \
-    OH323_LIBDIR=%{_libdir} \
-    optshared \
+    optshared
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
