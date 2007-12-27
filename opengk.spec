@@ -9,7 +9,7 @@ Group:		Communications
 Source0:	%{name}-%{cvs}.tar.bz2
 Patch0:		%{name}-mak_files.patch
 URL:		http://openh323.sourceforge.net/
-BuildRequires:	openh323-devel
+BuildRequires:	opal-devel
 BuildRequires:	ptlib-devel
 Conflicts:	vpb-devel
 Epoch:		1
