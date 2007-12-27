@@ -48,7 +48,7 @@ export CXXFLAGS="%{optflags} -DLDAP_DEPRECATED"
 %make \
     USE_OPAL=1 \
     OPTCCFLAGS="%{optflags}" \
-    PWLIBDIR=%{_datadir}/pwlib \
+    PWLIBDIR=%{_datadir}/ptlib \
     OPALDIR=%{_datadir}/opal \
     PREFIX=%{_prefix} \
     OPAL_LIBDIR=%{_libdir} \
