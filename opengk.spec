@@ -3,13 +3,13 @@
 Summary:	H.323 basic gatekeeper
 Name:		opengk
 Version:	1.4.2
-Release:	%mkrel 0.%{cvs}.3
+Release:	%mkrel 0.%{cvs}.4
 License:	MPL
 Group:		Communications
 Source0:	%{name}-%{cvs}.tar.bz2
 Patch0:		%{name}-mak_files.patch
 URL:		http://openh323.sourceforge.net/
-BuildRequires:	opal-devel
+BuildRequires:	opal3-devel
 BuildRequires:	ptlib-devel
 Conflicts:	vpb-devel
 Epoch:		1
