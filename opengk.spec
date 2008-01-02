@@ -13,6 +13,7 @@ BuildRequires:	opal3-devel
 BuildRequires:	ptlib-devel
 Conflicts:	vpb-devel
 Epoch:		1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 This is a very basic H.323 Gatekeeper.
