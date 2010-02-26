@@ -3,7 +3,7 @@
 Summary:	H.323 basic gatekeeper
 Name:		opengk
 Version:	1.4.2
-Release:	%mkrel 0.%{cvs}.4
+Release:	%mkrel 0.%{cvs}.5
 License:	MPL
 Group:		Communications
 Source0:	%{name}-%{cvs}.tar.bz2
