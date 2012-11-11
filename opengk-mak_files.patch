@@ -1,0 +1,23 @@
+--- opengk/Makefile	2006-04-25 17:11:57.000000000 -0700
++++ opengk/Makefile.new	2007-05-03 18:13:31.000000000 -0700
+@@ -34,6 +34,12 @@
+ 
+ PROG	= opengk
+ SOURCES	:= main.cxx custom.cxx
++TAR_SOURCES     = Makefile main.h main.cxx README.txt version.h
++
++
++ifndef PWLIBDIR
++PWLIBDIR=$(HOME)/pwlib
++endif
+ 
+ ifdef USE_OPAL
+ 
+@@ -52,6 +58,6 @@ ifndef OPENH323DIR
+ OPENH323DIR=$(HOME)/openh323
+ endif
+ 
+-include $(OPENH323DIR)/openh323u.mak
++include $(OPENH323DIR)/share/openh323/openh323u.mak
+ 
+ endif
